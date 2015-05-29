@@ -23,17 +23,6 @@ dependencies {
     testCompile 'junit:junit:4.11'
 }
 
-sourceSets {
-    main {
-        java {
-            srcDir 'src/java'
-        }
-        resources {
-            srcDir 'src/resources'
-        }
-    }
-}
-
 task wrapper(type: Wrapper) {
     gradleVersion = '2.4'
 }
