@@ -18,7 +18,7 @@ package noiter.arch.restful.service.payment;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import noiter.arch.restful.service.scoring.Score;
-import noiter.arch.restful.utils.jaxrs.client.circuitbreaker.ClientCircutBreakerFilter;
+import noiter.arch.restful.utils.jaxrs.client.circuitbreaker.ClientCircuitBreakerFilter;
 import org.apache.http.client.config.RequestConfig;
 import org.glassfish.jersey.apache.connector.ApacheClientProperties;
 import org.glassfish.jersey.apache.connector.ApacheConnectorProvider;
@@ -67,7 +67,7 @@ public class SyncPaymentService {
         clientConfig.property(ApacheClientProperties.REQUEST_CONFIG, reqConfig); // jersey specific
 
         client = ClientBuilder.newClient(clientConfig);
-        client.register(new ClientCircutBreakerFilter());
+        client.register(new ClientCircuitBreakerFilter());
 
         paymentDao = new PaymentDaoImpl();
     }

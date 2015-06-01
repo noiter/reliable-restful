@@ -77,8 +77,6 @@ public class RestServicesTest {
         client.close();
     }
 
-    
-
     /*
     @Test
     public void testResteasy() throws Exception {
@@ -86,12 +84,12 @@ public class RestServicesTest {
                                                .setConnectTimeout(1000)
                                                .setSocketTimeout(1000)
                                                .setConnectionRequestTimeout(1000)
-                                               .build();            
+                                               .build();
 
         CloseableHttpClient httpClient = HttpClientBuilder.create()        // RESTEasy specific
                                                           .setDefaultRequestConfig(reqConfig)
                                                           .setMaxConnPerRoute(11)
-                                                          .build();  
+                                                          .build();
         Client client = new ResteasyClientBuilder().httpEngine(new ApacheHttpClient4Engine(httpClient, true)).build();// RESTEasy specific
     }*/
 

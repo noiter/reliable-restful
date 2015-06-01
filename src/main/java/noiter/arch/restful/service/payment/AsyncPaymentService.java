@@ -15,12 +15,11 @@
  */
 package noiter.arch.restful.service.payment;
 
-
 import com.google.common.collect.ImmutableSet;
 import noiter.arch.restful.service.scoring.Score;
 import noiter.arch.restful.utils.jaxrs.client.Java8Client;
 import noiter.arch.restful.utils.jaxrs.client.ResultConsumer;
-import noiter.arch.restful.utils.jaxrs.client.circuitbreaker.ClientCircutBreakerFilter;
+import noiter.arch.restful.utils.jaxrs.client.circuitbreaker.ClientCircuitBreakerFilter;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.grizzly.connector.GrizzlyConnectorProvider;
 
@@ -36,13 +35,11 @@ import java.util.function.Function;
 
 import static noiter.arch.restful.service.payment.PaymentMethod.*;
 
-
 @Singleton
 @Path("/")
 public class AsyncPaymentService {
 
     private static final URI creditScoreURI = URI.create("http://localhost:9080/service/rest/creditscores");
-
 
     private final Java8Client client;
     private final AsyncPaymentDao paymentDao;
@@ -57,7 +54,7 @@ public class AsyncPaymentService {
 
         // use extended client (JAX-RS 2.0 client does not support CompletableFutures)
         client = Java8Client.newClient(ClientBuilder.newClient(clientConfig));
-        client.register(new ClientCircutBreakerFilter());
+        client.register(new ClientCircuitBreakerFilter());
 
 
         paymentDao = new PaymentDaoImpl();

@@ -15,8 +15,6 @@
  */
 package noiter.arch.restful.utils.jaxrs.client;
 
-
-
 import java.net.URI;
 import java.util.Locale;
 import java.util.Map;
@@ -41,9 +39,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriBuilder;
-
-
-
 
 public class Java8Client implements Client {
 

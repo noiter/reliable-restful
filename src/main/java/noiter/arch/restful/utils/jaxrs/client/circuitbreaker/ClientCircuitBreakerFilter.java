@@ -15,8 +15,6 @@
  */
 package noiter.arch.restful.utils.jaxrs.client.circuitbreaker;
 
-
-
 import java.io.IOException;
 
 import javax.ws.rs.client.ClientRequestContext;
@@ -29,18 +27,15 @@ import noiter.arch.restful.utils.circuitbreaker.CircuitOpenedException;
 import noiter.arch.restful.utils.circuitbreaker.metrics.MetricsRegistry;
 import noiter.arch.restful.utils.circuitbreaker.metrics.Transaction;
 
-
-
-public class ClientCircutBreakerFilter implements ClientRequestFilter, ClientResponseFilter  {
+public class ClientCircuitBreakerFilter implements ClientRequestFilter, ClientResponseFilter  {
 
     private static final String TRANSACTION = "transaction";
     private final CircuitBreakerRegistry circuitBreakerRegistry;
     private final MetricsRegistry metricsRegistry;
     
     // ..
-    
-    
-    public ClientCircutBreakerFilter() {
+
+    public ClientCircuitBreakerFilter() {
         metricsRegistry = new MetricsRegistry();
         circuitBreakerRegistry = new CircuitBreakerRegistry(new ErrorRateBasedHealthPolicy(metricsRegistry));
     }
