@@ -15,7 +15,6 @@
  */
 package noiter.arch.restful.utils.jaxrs.container.circuitbreaker;
 
-
 import java.time.Duration;
 
 
@@ -25,8 +24,6 @@ import noiter.arch.restful.utils.circuitbreaker.metrics.TransactionMetrics;
 import noiter.arch.restful.utils.jaxrs.container.Environment;
 import noiter.arch.restful.utils.jaxrs.container.Environment.Threadpool;
 import noiter.arch.restful.utils.jaxrs.container.tomcat.TomcatEnvironment;
-
-
 
 public class OverloadBasedHealthPolicy implements HealthPolicy  {
  

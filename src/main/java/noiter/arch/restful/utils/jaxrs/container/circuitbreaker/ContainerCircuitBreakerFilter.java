@@ -15,8 +15,6 @@
  */
 package noiter.arch.restful.utils.jaxrs.container.circuitbreaker;
 
-
-
 import java.io.IOException;
 import java.time.Duration;
 
@@ -33,10 +31,8 @@ import noiter.arch.restful.utils.circuitbreaker.CircuitOpenedException;
 import noiter.arch.restful.utils.circuitbreaker.metrics.MetricsRegistry;
 import noiter.arch.restful.utils.circuitbreaker.metrics.Transaction;
 
-
-
 @Provider
-public class ContainerCircutBreakerFilter implements ContainerRequestFilter, ContainerResponseFilter {
+public class ContainerCircuitBreakerFilter implements ContainerRequestFilter, ContainerResponseFilter {
 
     private static final String TRANSACTION = "circuit_breaker_transaction";
 
@@ -49,7 +45,7 @@ public class ContainerCircutBreakerFilter implements ContainerRequestFilter, Con
 
     //..
 
-    public ContainerCircutBreakerFilter() {
+    public ContainerCircuitBreakerFilter() {
         metricsRegistry = new MetricsRegistry();
         Duration thresholdSlowTransaction = Duration.ofSeconds(5); 
         circuitBreakerRegistry = new CircuitBreakerRegistry(new OverloadBasedHealthPolicy(metricsRegistry, thresholdSlowTransaction));

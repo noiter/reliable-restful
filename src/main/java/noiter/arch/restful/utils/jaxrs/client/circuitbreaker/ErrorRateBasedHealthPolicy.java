@@ -21,7 +21,6 @@ import noiter.arch.restful.utils.circuitbreaker.HealthPolicy;
 import noiter.arch.restful.utils.circuitbreaker.metrics.MetricsRegistry;
 import noiter.arch.restful.utils.circuitbreaker.metrics.Transactions;
 
-
 public class ErrorRateBasedHealthPolicy implements HealthPolicy  {
   
     private final MetricsRegistry metricsRegistry;

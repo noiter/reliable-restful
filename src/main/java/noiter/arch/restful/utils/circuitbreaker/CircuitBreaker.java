@@ -23,7 +23,6 @@ import java.time.Instant;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicReference;
 
-
 public class CircuitBreaker {
     // ..
     private final String scope;
